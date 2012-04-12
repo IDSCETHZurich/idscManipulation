@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- startup simulated world -->
+  	<param name="/use_sim_time" value="true" />
+	<node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false" output="screen"/>
+
+	<!-- send cob urdf to param server -->
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find durga_description)/urdf/durga_arm_left.urdf.xacro'" />
+
+	<node name="spawn_gazebo_model" pkg="gazebo" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1 " respawn="false" output="screen" />
+
+	<!-- default controllers -->
+	<include file="$(find durga_description)/launch/default_controllers_durga.launch" />
+
+	<!-- services for simulation (e.g.: stop for simulation)-->
+	<node pkg="cob_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+
+</launch>

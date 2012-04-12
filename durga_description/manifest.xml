@@ -1,0 +1,14 @@
+<package>
+  <description brief="durga_description">
+
+     durga_description
+
+  </description>
+  <author>gajan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/durga_description</url>
+
+</package>
+
+

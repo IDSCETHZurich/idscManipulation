@@ -1,0 +1,24 @@
+<package>
+  <description brief="durga_bringup">
+
+     durga_bringup
+
+  </description>
+  <author>gajan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/durga_bringup</url>
+  <depend package="cob_gazebo"/>
+  <depend package="cob_hardware_config"/>
+  <depend package="cob_controller_configuration_gazebo"/>
+  <depend package="cob_ogre"/>
+  <depend package="cob_srvs"/>
+  <depend package="cob_trajectory_controller"/>
+  <depend package="cob_description"/>
+  <depend package="cob_default_robot_config"/>
+  <depend package="cob_bringup_sim"/>
+  <depend package="cob_bringup"/>
+
+</package>
+
+

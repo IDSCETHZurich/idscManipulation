@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- upload button parameters, but delete the old ones before -->
+	<rosparam command="delete" param="command_gui"/>
+	<rosparam command="load" ns="command_gui/control_buttons" file="$(find durga_bringup)/config/command_gui_buttons.yaml"/>
+	
+	<!-- upload script server parameters -->
+	<rosparam command="load" ns="/script_server/arm" file="$(find durga_bringup)/config/arm_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/sdh" file="$(find durga_bringup)/config/sdh_joint_configurations.yaml"/>
+	
+	<!-- start dashboards -->
+	<node pkg="durga_bringup" type="knoeppkes.py" name="dashboard" ns="dashboard" cwd="node" respawn="false" output="screen" />
+	
+</launch>
